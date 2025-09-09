@@ -1,183 +1,154 @@
+/* Main body styles */
 body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      /* Make text size responsive */
-      font-size: 16px;
-    }
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px; /* Responsive base font size */
+}
 
-    header {
-      background-color: #f5f0e6;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      /* Add a subtle shadow for depth */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      transition: box-shadow 0.3s;
-    }
+/* Header styles */
+header {
+  background-color: #f5f0e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: box-shadow 0.3s;
+}
+header:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+header img {
+  height: 30px;
+  transition: transform 0.3s;
+}
+header img:hover {
+  transform: scale(1.07);
+}
 
-    header:hover {
-      /* Slightly increase shadow on hover */
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
+/* Button styles (donate and CTA) */
+.donate-btn, .cta-btn {
+  background-color: #c1704f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-family: 'Open Sans', sans-serif;
+}
+.donate-btn {
+  padding: 0.7rem 1.2rem;
+}
+.cta-btn {
+  padding: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+.donate-btn:hover, .cta-btn:hover {
+  background-color: #a55a3c;
+  transform: scale(1.05);
+}
 
-    header img {
-      height: 30px;
-      transition: transform 0.3s;
-    }
+/* Hero section styles */
+.hero {
+  display: flex;
+  height: 60vh;
+  flex-wrap: wrap;
+  transition: all 0.3s;
+}
+.hero-text {
+  flex: 1;
+  background-color: #003366;
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 250px;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-family: 'Merriweather', serif;
+  margin: 0.5rem 0 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+.hero-text p {
+  margin: 0 0 3rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.hero-image {
+  flex: 1;
+  min-height: 300px;
+  background: url(img/charitywater.jpg) center/cover no-repeat;
+  transition: transform 0.3s;
+}
+.hero-image:hover {
+  transform: scale(1.03);
+}
 
-    header img:hover {
-      /* Slight zoom effect on logo hover */
-      transform: scale(1.07);
-    }
+/* Mission section styles */
+.mission {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+}
+.mission h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #003366;
+}
+.mission p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-    .donate-btn {
-      background-color: #c1704f;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
+/* Footer note styles */
+.footer-note {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
 
-    .donate-btn:hover {
-      /* Slightly darken button and scale up on hover */
-      background-color: #a55a3c;
-      transform: scale(1.05);
-    }
+/* Responsive styles for tablets and below */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-text, .hero-image {
+    min-width: 0;
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}
 
-    .hero {
-      display: flex;
-      height: 60vh;
-      flex-wrap: wrap;
-      /* Add transition for smooth layout changes */
-      transition: all 0.3s;
-    }
-
-    .hero-text {
-      flex: 1;
-      background-color: #003366;
-      color: white;
-      padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 250px;
-    }
-
-    .hero-text h1 {
-      font-size: 2.5rem;
-      font-family: 'Merriweather', serif;
-      margin: 0.5rem 0 2rem;
-      font-weight: bold;
-      /* Responsive font size */
-      line-height: 1.1;
-    }
-
-    .hero-text p {
-      margin: 0 0 3rem;
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-
-    .cta-btn {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #c1704f;
-      color: white;
-      padding: 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      width: fit-content;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .cta-btn:hover {
-      /* Slightly darken button and scale up on hover */
-      background-color: #a55a3c;
-      transform: scale(1.05);
-    }
-
-    .hero-image {
-      flex: 1;
-      min-height: 300px;
-      background: url(img/charitywater.jpg) center/cover no-repeat;
-      transition: transform 0.3s;
-    }
-
-    .hero-image:hover {
-      /* Slight zoom effect on image hover */
-      transform: scale(1.03);
-    }
-
-     .mission {
-      padding: 3rem 2rem;
-      text-align: center;
-      background-color: #ffffff;
-      color: #333;
-    }
-
-    .mission h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #003366;
-    }
-
-    .mission p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    
-    .footer-note {
-      font-size: 0.9rem;
-      color: #555;
-      text-align: center;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-
-    /* Responsive styles for tablets and below */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        height: auto;
-      }
-      .hero-text, .hero-image {
-        min-width: 0;
-        width: 100%;
-        padding: 2rem 1rem;
-      }
-      .hero-text {
-        padding: 2rem 1rem;
-      }
-    }
-
-    /* Responsive styles for mobile screens */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-      .donate-btn {
-        margin-top: 1rem;
-        width: 100%;
-      }
-      .hero-text h1 {
-        font-size: 1.5rem;
-      }
-      .hero-text p {
-        font-size: 1rem;
-      }
-      .mission {
-        padding: 1.5rem 0.5rem;
-      }
-    }
-    /* End of responsive and hover effect styles */
+/* Responsive styles for mobile screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .donate-btn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .mission {
+    padding: 1.5rem 0.5rem;
+  }
+}
+/* End of simplified responsive and hover effect styles */
